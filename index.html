@@ -11,6 +11,24 @@
     <title>VYOMASANDHI — Ideas, thoughtfully brought to life.</title>
   </head>
   <body>
+    <!-- Netlify form detection template for build/deploy time -->
+    <form name="contact" data-netlify="true" netlify hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="serviceType">
+        <option value="Business Website">Business Website</option>
+        <option value="Landing Page">Landing Page</option>
+        <option value="Website Redesign">Website Redesign</option>
+      </select>
+      <select name="budget">
+        <option value="Not sure yet">Not sure yet</option>
+        <option value="Starting ~$200">Starting ~$200</option>
+        <option value="$200–$500">$200–$500</option>
+        <option value="$500+">$500+</option>
+      </select>
+      <textarea name="details"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -12,10 +12,7 @@ export default function ContactPage() {
 
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null) // { type: 'success' | 'error' | 'unconfigured', message: string }
-
-  // Configured managed form delivery endpoint (e.g. Formspree, Basin, Web3Forms)
-  const FORM_ENDPOINT = import.meta.env.VITE_CONTACT_FORM_ENDPOINT || ''
+  const [submitStatus, setSubmitStatus] = useState(null) // { type: 'success' | 'error', message: string }
 
   const validate = () => {
     const newErrors = {}
@@ -54,33 +51,17 @@ export default function ContactPage() {
       return
     }
 
-    // Honest handling: never fake a successful delivery if no provider is configured
-    if (!FORM_ENDPOINT) {
-      setSubmitStatus({
-        type: 'unconfigured',
-        message:
-          'The managed form delivery provider is not yet configured (VITE_CONTACT_FORM_ENDPOINT). Your enquiry was verified locally, but has not been sent. To enable delivery, please configure a managed form service endpoint in your environment.',
-      })
-      return
-    }
-
     setIsSubmitting(true)
     setSubmitStatus(null)
 
     try {
-      const res = await fetch(FORM_ENDPOINT, {
+      const res = await fetch('/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          serviceType: formData.serviceType,
-          budget: formData.budget,
-          details: formData.details,
-        }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData,
+        }).toString(),
       })
 
       if (res.ok) {
@@ -107,7 +88,7 @@ export default function ContactPage() {
       setSubmitStatus({
         type: 'error',
         message:
-          'A network error occurred while connecting to the form delivery service. Please check your connection and try again.',
+          'A network error occurred while submitting your enquiry. Please check your connection and try again.',
       })
     } finally {
       setIsSubmitting(false)
@@ -148,14 +129,22 @@ export default function ContactPage() {
                   <div className="status-badge-tag">
                     {submitStatus.type === 'success' && 'MESSAGE SENT'}
                     {submitStatus.type === 'error' && 'DELIVERY ERROR'}
-                    {submitStatus.type === 'unconfigured' && 'FORM PROVIDER NOTICE'}
                   </div>
                   <p className="status-text">{submitStatus.message}</p>
                 </div>
               )}
 
               {submitStatus?.type !== 'success' && (
-                <form className="project-enquiry-form" onSubmit={handleSubmit} noValidate>
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  className="project-enquiry-form"
+                  onSubmit={handleSubmit}
+                  noValidate
+                >
+                  {/* Hidden field for Netlify Form identification */}
+                  <input type="hidden" name="form-name" value="contact" />
                   {/* Name field (Required) */}
                   <div className="form-group">
                     <label htmlFor="name" className="form-label">
