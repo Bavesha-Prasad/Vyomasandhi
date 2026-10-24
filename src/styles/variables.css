@@ -1,0 +1,58 @@
+:root {
+  /* ==========================================================================
+     VYOMASANDHI Global Brand & Token System
+     Brand: Glossy Obsidian (#08090B) + Elevated (#1C1D20) + Off-White (#F5F0E8) + Muted Bronze (#B08D57)
+     ========================================================================== */
+
+  /* Primary Brand Colours */
+  --color-primary: #08090B;               /* Glossy Obsidian — Main brand background */
+  --color-surface-elevated: #1C1D20;      /* Elevated dark surfaces & card bases */
+  --color-surface-elevated-hover: #23252a;/* Hover surface */
+  --color-surface-card: rgba(28, 29, 32, 0.75);
+
+  /* Text & Contrast Colours */
+  --color-text-primary: #F5F0E8;          /* Warm off-white for headlines and primary text */
+  --color-text-secondary: rgba(245, 240, 232, 0.72); /* Secondary text */
+  --color-text-muted: rgba(245, 240, 232, 0.45);     /* Captions & metadata */
+
+  /* Brand Accent */
+  --color-accent: #B08D57;                /* Muted bronze for selective accents */
+  --color-accent-subtle: rgba(176, 141, 87, 0.12); /* Accent background tint */
+  --color-accent-hover: #c59f67;          /* Slightly illuminated bronze */
+  --color-accent-border: rgba(176, 141, 87, 0.35);
+
+  /* Borders & Separation */
+  --color-border: rgba(245, 240, 232, 0.09);          /* Fine default border */
+  --color-border-subtle: rgba(245, 240, 232, 0.05);   /* Internal divider border */
+  --color-border-highlight: rgba(255, 255, 255, 0.14);/* Specular highlight border */
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Restrained Glossy Layers & Gradients */
+  --gloss-layer-surface: linear-gradient(
+    180deg,
+    rgba(28, 29, 32, 0.92) 0%,
+    rgba(18, 19, 22, 0.97) 100%
+  );
+  --gloss-layer-card: linear-gradient(
+    145deg,
+    rgba(32, 33, 38, 0.85) 0%,
+    rgba(18, 19, 22, 0.95) 100%
+  );
+  --gloss-reflection-border: inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+  --gloss-shadow-panel: 0 12px 32px -8px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+  --gloss-shadow-elevated: 0 20px 48px -12px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+  --gloss-shadow-float: 0 25px 60px -15px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s var(--ease-smooth);
+  --transition-medium: 0.4s var(--ease-smooth);
+  --transition-slow: 0.7s var(--ease-smooth);
+}

@@ -1,0 +1,321 @@
+/* ==========================================================================
+   VYOMASANDHI Process Page — Editorial Timeline
+   Restrained, Typographic, Disciplined Whitespace
+   ========================================================================== */
+
+.process-page {
+  padding-bottom: 7rem;
+  background-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Page Header
+   -------------------------------------------------------------------------- */
+.process-header {
+  padding: 5.5rem 2rem 4rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: linear-gradient(
+    180deg,
+    rgba(14, 15, 18, 0.6) 0%,
+    rgba(8, 9, 11, 0) 100%
+  );
+}
+
+.process-header-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.process-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
+.process-title {
+  font-size: clamp(2.5rem, 5vw, 3.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.process-supporting {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 680px;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Timeline Section
+   -------------------------------------------------------------------------- */
+.timeline-section {
+  padding: 5rem 2rem 0;
+}
+
+.timeline-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.editorial-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual Timeline Stage */
+.timeline-stage {
+  display: flex;
+  gap: 3.5rem;
+  position: relative;
+}
+
+/* Timeline Vertical Axis */
+.timeline-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 14px;
+}
+
+.timeline-node {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(176, 141, 87, 0.15);
+  margin-top: 10px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.timeline-line {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(176, 141, 87, 0.4) 0%,
+    var(--color-border-subtle) 25%,
+    var(--color-border-subtle) 100%
+  );
+  flex: 1;
+  margin-top: 8px;
+}
+
+/* Stage Body Content */
+.stage-body {
+  flex: 1;
+  padding-bottom: 4.5rem;
+}
+
+.timeline-stage.is-last .stage-body {
+  padding-bottom: 2rem;
+}
+
+/* Stage Header: Number & Heading */
+.stage-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.stage-number {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+}
+
+.stage-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+/* Single Concise Sentence */
+.stage-sentence {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 780px;
+}
+
+/* Two Separated Columns: YOUR ROLE & OUR DELIVERABLES */
+.stage-columns {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.stage-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-heading {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin: 0 0 1rem;
+}
+
+.col-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Deliverables List */
+.deliverables-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.deliverables-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.bullet-dash {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+/* Fine Divider Line between stages */
+.stage-divider {
+  height: 1px;
+  background: var(--color-border-subtle);
+  margin-top: 4rem;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Footer Call to Action
+   -------------------------------------------------------------------------- */
+.process-footer-cta {
+  margin-top: 5rem;
+  padding: 4rem 3rem;
+  border: 1px solid var(--color-accent-border);
+  border-radius: 12px;
+  background: linear-gradient(
+    145deg,
+    rgba(28, 29, 32, 0.6) 0%,
+    rgba(14, 15, 18, 0.8) 100%
+  );
+  text-align: center;
+  box-shadow: var(--gloss-shadow-panel);
+}
+
+.footer-cta-title {
+  font-size: 2.15rem;
+  color: var(--color-text-primary);
+  margin: 0 0 1rem;
+}
+
+.footer-cta-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .timeline-stage {
+    gap: 2rem;
+  }
+
+  .stage-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stage-header {
+    gap: 1rem;
+  }
+
+  .stage-number,
+  .stage-title {
+    font-size: 1.95rem;
+  }
+
+  .stage-sentence {
+    margin-bottom: 2rem;
+  }
+
+  .stage-divider {
+    margin-top: 3rem;
+  }
+
+  .stage-body {
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-header {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .timeline-section {
+    padding: 3.5rem 1.25rem 0;
+  }
+
+  .timeline-stage {
+    gap: 1.25rem;
+  }
+
+  .timeline-node {
+    margin-top: 7px;
+  }
+
+  .stage-number,
+  .stage-title {
+    font-size: 1.7rem;
+  }
+
+  .stage-sentence {
+    font-size: 1rem;
+  }
+
+  .process-footer-cta {
+    padding: 2.75rem 1.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .footer-cta-title {
+    font-size: 1.75rem;
+  }
+}

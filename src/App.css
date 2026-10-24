@@ -1,81 +1,16 @@
-.starter-layout {
+/* ==========================================================================
+   VYOMASANDHI Main Application Shell
+   ========================================================================== */
+
+.app-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+  position: relative;
 }
 
-.starter-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-}
-
-.brand {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-
-.brand-tagline {
-  font-size: 0.875rem;
-  opacity: 0.75;
-}
-
-.starter-nav {
-  display: flex;
-  gap: 1.25rem;
-}
-
-.starter-nav a {
-  color: inherit;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: opacity 0.2s ease;
-}
-
-.starter-nav a:hover {
-  opacity: 0.7;
-}
-
-.starter-content {
+.app-main {
   flex: 1;
-  padding: 3rem 0;
-}
-
-.starter-view h2 {
-  font-size: 1.75rem;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.starter-view p {
-  opacity: 0.8;
-  max-width: 540px;
-  line-height: 1.6;
-}
-
-.starter-footer {
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(128, 128, 128, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  opacity: 0.7;
-}
-
-.starter-footer p {
-  margin: 0;
 }
