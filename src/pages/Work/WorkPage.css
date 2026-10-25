@@ -687,3 +687,133 @@
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   Visual Distinction: Liquid-Chrome Theme for AURELIX Hair Atelier
+   ========================================================================== */
+.project-card.theme-liquid-chrome {
+  border-color: rgba(203, 213, 225, 0.2);
+}
+
+.project-card.theme-liquid-chrome:hover {
+  border-color: rgba(226, 232, 240, 0.35);
+}
+
+.project-card.theme-liquid-chrome .project-banner {
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(226, 232, 240, 0.12) 0%,
+    rgba(24, 27, 34, 0.98) 45%,
+    rgba(10, 11, 14, 1) 100%
+  );
+  border-bottom: 1px solid rgba(226, 232, 240, 0.16);
+}
+
+.project-card.theme-liquid-chrome .concept-notice-badge {
+  color: #e2e8f0;
+  background: rgba(226, 232, 240, 0.08);
+  border-color: rgba(226, 232, 240, 0.28);
+}
+
+.project-card.theme-liquid-chrome .banner-live-btn {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.project-card.theme-liquid-chrome .banner-live-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+  color: #7dd3fc;
+}
+
+.project-card.theme-liquid-chrome .banner-live-btn .live-dot,
+.project-card.theme-liquid-chrome .prominent-visit-btn .live-dot {
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.project-card.theme-liquid-chrome .art-motif {
+  color: #e2e8f0;
+  text-shadow: 0 0 16px rgba(226, 232, 240, 0.65);
+}
+
+.project-card.theme-liquid-chrome .b-stat-val {
+  color: #e2e8f0;
+  text-shadow: 0 0 12px rgba(226, 232, 240, 0.25);
+}
+
+.project-card.theme-liquid-chrome .project-tagline {
+  color: #94a3b8;
+}
+
+.project-card.theme-liquid-chrome .project-disclosure-note {
+  background: rgba(226, 232, 240, 0.05);
+  border-color: rgba(226, 232, 240, 0.2);
+}
+
+.project-card.theme-liquid-chrome .disclosure-icon {
+  color: #cbd5e1;
+}
+
+.project-card.theme-liquid-chrome .project-demo-banner-box {
+  background: linear-gradient(135deg, rgba(226, 232, 240, 0.12) 0%, rgba(18, 22, 28, 0.95) 100%);
+  border: 1px solid rgba(226, 232, 240, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.project-card.theme-liquid-chrome .demo-box-badge {
+  color: #cbd5e1;
+}
+
+.project-card.theme-liquid-chrome .prominent-visit-btn,
+.project-card.theme-liquid-chrome .demo-box-cta-btn,
+.project-card.theme-liquid-chrome .live-demo-link,
+.modal-box.theme-liquid-chrome .live-demo-link {
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 50%, #94a3b8 100%);
+  color: #0b0d11;
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(226, 232, 240, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.project-card.theme-liquid-chrome .prominent-visit-btn:hover,
+.project-card.theme-liquid-chrome .demo-box-cta-btn:hover,
+.project-card.theme-liquid-chrome .live-demo-link:hover,
+.modal-box.theme-liquid-chrome .live-demo-link:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+  color: #08090b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(226, 232, 240, 0.55);
+}
+
+.project-card.theme-liquid-chrome .feat-check {
+  color: #cbd5e1;
+}
+
+.project-card.theme-liquid-chrome .demo-trigger-btn {
+  color: #cbd5e1;
+  border-bottom-color: #cbd5e1;
+}
+
+.project-card.theme-liquid-chrome .demo-trigger-btn:hover {
+  color: #ffffff;
+}
+
+.modal-box.theme-liquid-chrome {
+  border-color: rgba(226, 232, 240, 0.28);
+}
+
+.modal-box.theme-liquid-chrome .modal-subtitle {
+  color: #cbd5e1;
+}
+
+.modal-box.theme-liquid-chrome .concept-notice-badge {
+  color: #e2e8f0;
+  background: rgba(226, 232, 240, 0.08);
+  border-color: rgba(226, 232, 240, 0.28);
+}
+
+.modal-box.theme-liquid-chrome .modal-section h4 {
+  color: #cbd5e1;
+}

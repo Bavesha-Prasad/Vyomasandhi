@@ -17,6 +17,9 @@ export default function WorkPage() {
         'Klaro Home Services is a fictional cleaning and home-services website concept developed to showcase our design and engineering standards for service-based businesses. Built with a mobile-first responsive layout, it features structured service information, clear tiering, and an interactive demonstration booking flow.',
       disclosure:
         'Fictional Concept Notice: Klaro Home Services is an illustrative prototype. All services and pricing are conceptual, and the interactive booking flow is a demonstration that does not create real appointments or charges.',
+      demoHeadline: 'Experience the Klaro live website',
+      demoDesc:
+        'Explore the responsive mobile-first layout, service tiers, and interactive booking demonstration flow in real-time.',
       designDirection:
         'Editorial utility with high-contrast information hierarchy. We used warm, grounding neutrals paired with deep obsidian foundations to establish dependability and warmth. Navigation is streamlined so homeowners can easily explore service tiers and navigate the demonstration booking flow.',
       technologies: ['React', 'Semantic HTML5', 'Vanilla CSS', 'Responsive Grid', 'Form Validation'],
@@ -30,6 +33,8 @@ export default function WorkPage() {
         accentColor: '#B08D57',
         badgeText: 'CONCEPT STUDY',
         heroHeadline: 'Premium domestic care, scheduled without friction.',
+        artMotif: '◆',
+        themeClass: 'theme-gold-warmth',
         stats: [
           { label: 'Booking Flow', val: 'Demo Prototype' },
           { label: 'Responsive', val: 'Mobile-First' },
@@ -43,25 +48,33 @@ export default function WorkPage() {
       tagline: 'Boutique Salon & Aesthetic Practice',
       category: 'Luxury Lifestyle & Beauty',
       isConcept: true,
+      liveUrl: 'https://aureliex.netlify.app/',
       description:
-        'AURELIX Hair Atelier is a concept study exploring how luxury service businesses can showcase high-end craftsmanship without visual clutter. The experience blends sculptural editorial typography with discreet consultation request pathways.',
+        'AURELIX Hair Atelier is a fictional premium salon website concept developed to showcase an editorial luxury digital experience. Built as a high-end salon showcase, it features bespoke service menus, stylist portfolios, and an immersive liquid-chrome aesthetic paired with dark obsidian surfaces.',
+      disclosure:
+        'Fictional Concept Notice: AURELIX Hair Atelier is an illustrative concept study and not a real client engagement. All treatments, stylist profiles, and consultation request flows are illustrative demonstrations.',
+      demoHeadline: 'Experience the AURELIX live website',
+      demoDesc:
+        'Explore the distinctive liquid-chrome visual aesthetic, responsive salon service menus, and editorial layouts in real-time.',
       designDirection:
-        'Minimalist editorial luxury. A deep Glossy Obsidian canvas punctuated by warm off-white typography and subtle bronze accents. Large typographic headings create an intimate, haute-couture atmosphere while maintaining fast load times and effortless readability.',
-      technologies: ['React', 'CSS Custom Properties', 'Editorial Typography', 'Component Architecture'],
+        'Premium salon experience with a distinctive liquid-chrome aesthetic. Reflective metallic gradients and platinum accents contrast against deep Glossy Obsidian surfaces, creating an avant-garde haute-couture atmosphere paired with fluid responsive layouts.',
+      technologies: ['React', 'Vite', 'JavaScript', 'CSS', 'Responsive Layout', 'Editorial Typography'],
       keyFeatures: [
-        'Curated gallery layout highlighting bespoke transformations',
-        'Individual stylist bios and artistic specializations',
-        'Private consultation enquiry form with preferred timeslot selection',
-        'Subtle glossy reflection borders and elevated dark surface styling',
+        'Distinctive liquid-chrome visual aesthetic with sculptural typography and dark obsidian contrast',
+        'Fully responsive editorial salon experience engineered with React and Vite',
+        'Curated salon service atelier menus, treatments, and pricing tiers',
+        'Interactive consultation inquiry pathways and seamless mobile navigation',
       ],
       mockupDetails: {
-        accentColor: '#B08D57',
+        accentColor: '#C0C7D0',
         badgeText: 'CONCEPT STUDY',
-        heroHeadline: 'Artistry in hair, thoughtfully sculpted for the individual.',
+        heroHeadline: 'Avant-garde hair artistry, sculpted with liquid-chrome distinction.',
+        artMotif: '✧',
+        themeClass: 'theme-liquid-chrome',
         stats: [
-          { label: 'Editorial Tone', val: 'Haute Minimalist' },
-          { label: 'Color System', val: 'Glossy Obsidian' },
-          { label: 'Typography', val: 'Serif + Grotesque' },
+          { label: 'Aesthetic Direction', val: 'Liquid Chrome' },
+          { label: 'Technology Stack', val: 'React + Vite' },
+          { label: 'Concept Status', val: 'Fictional Study' },
         ],
       },
     },
@@ -89,7 +102,7 @@ export default function WorkPage() {
         <div className="work-container">
           <div className="projects-grid">
             {projects.map((project) => (
-              <article key={project.id} className="project-card" id={project.id}>
+              <article key={project.id} className={`project-card ${project.mockupDetails?.themeClass || ''}`} id={project.id}>
                 {/* Visual Concept Banner */}
                 <div className="project-banner">
                   <div className="banner-top-bar">
@@ -101,10 +114,10 @@ export default function WorkPage() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="banner-live-btn"
-                          title="Open live website in a new tab"
+                          title={`Open ${project.title} live website in a new tab`}
                         >
                           <span className="live-dot" aria-hidden="true" />
-                          <span>Live Website Active</span>
+                          <span>Live Demo Active</span>
                           <span aria-hidden="true">↗</span>
                         </a>
                       )}
@@ -113,7 +126,7 @@ export default function WorkPage() {
                   </div>
 
                   <div className="banner-editorial-art">
-                    <div className="art-motif" aria-hidden="true">◆</div>
+                    <div className="art-motif" aria-hidden="true">{project.mockupDetails?.artMotif || '◆'}</div>
                     <h2 className="art-headline">{project.mockupDetails.heroHeadline}</h2>
                     <p className="art-brand-watermark">{project.title.toUpperCase()}</p>
                   </div>
@@ -145,10 +158,10 @@ export default function WorkPage() {
                           rel="noopener noreferrer"
                           className="prominent-visit-btn"
                           id={`${project.id}-top-visit-btn`}
-                          aria-label={`Visit live demo for ${project.title}`}
+                          aria-label={`View live demo for ${project.title}`}
                         >
                           <span className="live-dot" aria-hidden="true" />
-                          <span>Visit Live Website</span>
+                          <span>View Live Demo</span>
                           <span className="btn-arrow" aria-hidden="true">↗</span>
                         </a>
                       )}
@@ -168,9 +181,9 @@ export default function WorkPage() {
                     <div className="project-demo-banner-box">
                       <div className="demo-box-info">
                         <div className="demo-box-badge">INTERACTIVE PROTOTYPE</div>
-                        <h4 className="demo-box-heading">Experience the Klaro live website</h4>
+                        <h4 className="demo-box-heading">{project.demoHeadline || `Experience the ${project.title} live website`}</h4>
                         <p className="demo-box-desc">
-                          Explore the responsive mobile-first layout, service tiers, and interactive booking demonstration flow in real-time.
+                          {project.demoDesc || 'Explore the interactive prototype, responsive layouts, and design features in real-time.'}
                         </p>
                       </div>
                       <a
@@ -180,7 +193,7 @@ export default function WorkPage() {
                         className="demo-box-cta-btn"
                         id={`${project.id}-box-visit-btn`}
                       >
-                        <span>Open Klaro Website</span>
+                        <span>View Live Demo</span>
                         <span aria-hidden="true">↗</span>
                       </a>
                     </div>
@@ -219,7 +232,7 @@ export default function WorkPage() {
                           className="live-demo-link"
                           id={`${project.id}-live-demo`}
                         >
-                          <span>Visit Live Website</span>
+                          <span>View Live Demo</span>
                           <span aria-hidden="true" className="external-arrow">↗</span>
                         </a>
                       )}
@@ -255,7 +268,7 @@ export default function WorkPage() {
       {/* Case Study Details Modal */}
       {activeModal && (
         <div className="modal-backdrop" onClick={() => setActiveModal(null)} role="dialog" aria-modal="true">
-          <div className="modal-box" onClick={(e) => e.stopPropagation()}>
+          <div className={`modal-box ${activeModal.mockupDetails?.themeClass || ''}`} onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <div>
                 <span className="concept-notice-badge">FICTIONAL CONCEPT PROJECT</span>
@@ -314,7 +327,7 @@ export default function WorkPage() {
                     rel="noopener noreferrer"
                     className="live-demo-link"
                   >
-                    <span>Visit Live Website</span>
+                    <span>View Live Demo</span>
                     <span aria-hidden="true" className="external-arrow">↗</span>
                   </a>
                 )}
