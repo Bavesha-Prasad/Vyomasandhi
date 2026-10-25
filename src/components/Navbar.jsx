@@ -7,6 +7,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
+  const isContactPage = location.pathname.replace(/\/+$/, '') === '/contact'
+
   // Close mobile drawer on route change
   useEffect(() => {
     setMobileMenuOpen(false)
@@ -49,10 +51,12 @@ export default function Navbar() {
         </nav>
 
         <div className="header-actions">
-          <Link to="/contact" className="cta-button header-cta">
-            <span>Enquire</span>
-            <span className="cta-arrow" aria-hidden="true">→</span>
-          </Link>
+          {!isContactPage && (
+            <Link to="/contact" className="cta-button header-cta">
+              <span>Enquire</span>
+              <span className="cta-arrow" aria-hidden="true">→</span>
+            </Link>
+          )}
 
           {/* Mobile Menu Toggle */}
           <button
@@ -91,9 +95,11 @@ export default function Navbar() {
           </nav>
 
           <div className="drawer-footer">
-            <Link to="/contact" className="cta-button drawer-cta">
-              Start a Project Enquiry
-            </Link>
+            {!isContactPage && (
+              <Link to="/contact" className="cta-button drawer-cta">
+                Start a Project Enquiry
+              </Link>
+            )}
             <p className="drawer-philosophy">Understand deeply. Simplify thoughtfully. Build honestly.</p>
           </div>
         </div>
