@@ -12,24 +12,27 @@ export default function WorkPage() {
       tagline: 'High-Trust Domestic Services Platform',
       category: 'Home & Trade Services',
       isConcept: true,
+      liveUrl: 'https://6addee5e33a015d5ea92e8f1--karloservices.netlify.app/',
       description:
-        'Klaro Home Services is a conceptual web platform created to demonstrate our approach to service-based businesses. The design emphasizes immediate clarity, neighborhood trust markers, straightforward service bundles, and a transparent enquiry flow.',
+        'Klaro Home Services is a fictional cleaning and home-services website concept developed to showcase our design and engineering standards for service-based businesses. Built with a mobile-first responsive layout, it features structured service information, clear tiering, and an interactive demonstration booking flow.',
+      disclosure:
+        'Fictional Concept Notice: Klaro Home Services is an illustrative prototype. All services and pricing are conceptual, and the interactive booking flow is a demonstration that does not create real appointments or charges.',
       designDirection:
-        'Editorial utility with high-contrast information hierarchy. We used warm, grounding neutrals paired with deep obsidian foundations to establish dependability and warmth. Navigation is streamlined to get visitors to a quote request within two clicks.',
+        'Editorial utility with high-contrast information hierarchy. We used warm, grounding neutrals paired with deep obsidian foundations to establish dependability and warmth. Navigation is streamlined so homeowners can easily explore service tiers and navigate the demonstration booking flow.',
       technologies: ['React', 'Semantic HTML5', 'Vanilla CSS', 'Responsive Grid', 'Form Validation'],
       keyFeatures: [
-        'Instant quote estimation flow with tiered service options',
+        'Fully responsive design optimized for mobile and desktop screens',
+        'Structured domestic cleaning & home service information and tiers',
+        'Demonstration booking flow (interactive prototype without placing real bookings)',
         'Transparent pricing breakdown avoiding hidden consultation fees',
-        'Frictionless mobile layout optimized for homeowners on the move',
-        'Structured service areas and booking availability windows',
       ],
       mockupDetails: {
         accentColor: '#B08D57',
         badgeText: 'CONCEPT STUDY',
         heroHeadline: 'Premium domestic care, scheduled without friction.',
         stats: [
-          { label: 'Booking Flow', val: '2 Steps' },
-          { label: 'Asset Weight', val: '< 150KB' },
+          { label: 'Booking Flow', val: 'Demo Prototype' },
+          { label: 'Responsive', val: 'Mobile-First' },
           { label: 'Audit Status', val: '100% Accessible' },
         ],
       },
@@ -90,7 +93,12 @@ export default function WorkPage() {
                 {/* Visual Concept Banner */}
                 <div className="project-banner">
                   <div className="banner-top-bar">
-                    <span className="concept-notice-badge">FICTIONAL CONCEPT PROJECT</span>
+                    <div className="banner-badge-group">
+                      <span className="concept-notice-badge">FICTIONAL CONCEPT PROJECT</span>
+                      {project.liveUrl && (
+                        <span className="live-demo-badge">LIVE DEMO AVAILABLE</span>
+                      )}
+                    </div>
                     <span className="category-pill">{project.category}</span>
                   </div>
 
@@ -121,6 +129,13 @@ export default function WorkPage() {
 
                   <p className="project-description">{project.description}</p>
 
+                  {project.disclosure && (
+                    <div className="project-disclosure-note">
+                      <span className="disclosure-icon" aria-hidden="true">ℹ</span>
+                      <span>{project.disclosure}</span>
+                    </div>
+                  )}
+
                   <div className="project-section-block">
                     <h4 className="block-title">Design Direction</h4>
                     <p className="block-text">{project.designDirection}</p>
@@ -145,14 +160,29 @@ export default function WorkPage() {
                       ))}
                     </div>
 
-                    <button
-                      type="button"
-                      className="demo-trigger-btn"
-                      onClick={() => setActiveModal(project)}
-                    >
-                      <span>View Study Details</span>
-                      <span aria-hidden="true">→</span>
-                    </button>
+                    <div className="project-actions">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="live-demo-link"
+                          id={`${project.id}-live-demo`}
+                        >
+                          <span>View Live Demo</span>
+                          <span aria-hidden="true" className="external-arrow">↗</span>
+                        </a>
+                      )}
+
+                      <button
+                        type="button"
+                        className="demo-trigger-btn"
+                        onClick={() => setActiveModal(project)}
+                      >
+                        <span>View Study Details</span>
+                        <span aria-hidden="true">→</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -193,6 +223,12 @@ export default function WorkPage() {
             </div>
 
             <div className="modal-body">
+              {activeModal.disclosure && (
+                <div className="project-disclosure-note">
+                  <span className="disclosure-icon" aria-hidden="true">ℹ</span>
+                  <span>{activeModal.disclosure}</span>
+                </div>
+              )}
               <div className="modal-section">
                 <h4>Concept Intent</h4>
                 <p>{activeModal.description}</p>
@@ -220,10 +256,23 @@ export default function WorkPage() {
             </div>
 
             <div className="modal-footer">
-              <Link to="/contact" className="cta-button" onClick={() => setActiveModal(null)}>
-                <span>Discuss a Similar Project</span>
-                <span aria-hidden="true">→</span>
-              </Link>
+              <div className="modal-actions">
+                {activeModal.liveUrl && (
+                  <a
+                    href={activeModal.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="live-demo-link"
+                  >
+                    <span>View Live Demo</span>
+                    <span aria-hidden="true" className="external-arrow">↗</span>
+                  </a>
+                )}
+                <Link to="/contact" className="cta-button cta-secondary" onClick={() => setActiveModal(null)}>
+                  <span>Discuss a Similar Project</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
