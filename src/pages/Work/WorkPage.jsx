@@ -96,7 +96,17 @@ export default function WorkPage() {
                     <div className="banner-badge-group">
                       <span className="concept-notice-badge">FICTIONAL CONCEPT PROJECT</span>
                       {project.liveUrl && (
-                        <span className="live-demo-badge">LIVE DEMO AVAILABLE</span>
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="banner-live-btn"
+                          title="Open live website in a new tab"
+                        >
+                          <span className="live-dot" aria-hidden="true" />
+                          <span>Live Website Active</span>
+                          <span aria-hidden="true">↗</span>
+                        </a>
                       )}
                     </div>
                     <span className="category-pill">{project.category}</span>
@@ -123,8 +133,26 @@ export default function WorkPage() {
                 {/* Content & Case Study Details */}
                 <div className="project-content">
                   <div className="project-heading-wrap">
-                    <span className="project-tagline">{project.tagline}</span>
-                    <h3 className="project-title">{project.title}</h3>
+                    <div className="project-header-top-row">
+                      <div>
+                        <span className="project-tagline">{project.tagline}</span>
+                        <h3 className="project-title">{project.title}</h3>
+                      </div>
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="prominent-visit-btn"
+                          id={`${project.id}-top-visit-btn`}
+                          aria-label={`Visit live demo for ${project.title}`}
+                        >
+                          <span className="live-dot" aria-hidden="true" />
+                          <span>Visit Live Website</span>
+                          <span className="btn-arrow" aria-hidden="true">↗</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                   <p className="project-description">{project.description}</p>
@@ -133,6 +161,28 @@ export default function WorkPage() {
                     <div className="project-disclosure-note">
                       <span className="disclosure-icon" aria-hidden="true">ℹ</span>
                       <span>{project.disclosure}</span>
+                    </div>
+                  )}
+
+                  {project.liveUrl && (
+                    <div className="project-demo-banner-box">
+                      <div className="demo-box-info">
+                        <div className="demo-box-badge">INTERACTIVE PROTOTYPE</div>
+                        <h4 className="demo-box-heading">Experience the Klaro live website</h4>
+                        <p className="demo-box-desc">
+                          Explore the responsive mobile-first layout, service tiers, and interactive booking demonstration flow in real-time.
+                        </p>
+                      </div>
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="demo-box-cta-btn"
+                        id={`${project.id}-box-visit-btn`}
+                      >
+                        <span>Open Klaro Website</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
                     </div>
                   )}
 
@@ -169,7 +219,7 @@ export default function WorkPage() {
                           className="live-demo-link"
                           id={`${project.id}-live-demo`}
                         >
-                          <span>View Live Demo</span>
+                          <span>Visit Live Website</span>
                           <span aria-hidden="true" className="external-arrow">↗</span>
                         </a>
                       )}
@@ -264,7 +314,7 @@ export default function WorkPage() {
                     rel="noopener noreferrer"
                     className="live-demo-link"
                   >
-                    <span>View Live Demo</span>
+                    <span>Visit Live Website</span>
                     <span aria-hidden="true" className="external-arrow">↗</span>
                   </a>
                 )}

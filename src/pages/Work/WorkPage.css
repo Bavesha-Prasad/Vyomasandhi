@@ -88,6 +88,51 @@
   border-radius: 4px;
 }
 
+.banner-live-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.banner-live-btn:hover {
+  background: rgba(74, 222, 128, 0.22);
+  border-color: #4ade80;
+  color: #86efac;
+  transform: translateY(-1px);
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  display: inline-block;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
 .category-pill {
   font-size: 0.8rem;
   color: var(--color-text-muted);
@@ -171,6 +216,50 @@
   margin-bottom: 1.5rem;
 }
 
+.project-header-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.prominent-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.6rem;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 18px rgba(176, 141, 87, 0.45),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+}
+
+.prominent-visit-btn:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(176, 141, 87, 0.6);
+}
+
+.prominent-visit-btn .btn-arrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: transform var(--transition-fast);
+}
+
+.prominent-visit-btn:hover .btn-arrow {
+  transform: translate(3px, -3px);
+}
+
 .project-tagline {
   display: block;
   font-size: 0.8rem;
@@ -213,6 +302,72 @@
   font-size: 1rem;
   flex-shrink: 0;
   margin-top: 1px;
+}
+
+/* Dedicated Interactive Demo Box inside Project Card */
+.project-demo-banner-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: linear-gradient(135deg, rgba(176, 141, 87, 0.14) 0%, rgba(28, 29, 32, 0.9) 100%);
+  border: 1px solid rgba(176, 141, 87, 0.35);
+  border-radius: 12px;
+  padding: 1.6rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.demo-box-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.demo-box-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin-bottom: 0.35rem;
+}
+
+.demo-box-heading {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-text-primary);
+  margin: 0 0 0.35rem 0;
+}
+
+.demo-box-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.demo-box-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.85rem;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(176, 141, 87, 0.45);
+  transition: all var(--transition-fast);
+}
+
+.demo-box-cta-btn:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-primary);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(176, 141, 87, 0.65);
 }
 
 .project-section-block {
@@ -508,5 +663,27 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+  }
+
+  .project-header-top-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .prominent-visit-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .project-demo-banner-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+  }
+
+  .demo-box-cta-btn {
+    justify-content: center;
+    width: 100%;
   }
 }

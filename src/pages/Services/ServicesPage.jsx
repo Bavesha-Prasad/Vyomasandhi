@@ -73,7 +73,19 @@ export default function ServicesPage() {
                   <span className="ssl-lock" aria-hidden="true">🔒</span>
                   <span className="address-text">klaro-homeservices.concept/services</span>
                 </div>
-                <span className="mockup-concept-badge">CONCEPT DEMONSTRATION</span>
+                <div className="browser-chrome-actions">
+                  <span className="mockup-concept-badge">CONCEPT DEMO</span>
+                  <a
+                    href="https://6addee5e33a015d5ea92e8f1--karloservices.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mockup-live-btn"
+                    title="Open Klaro live demo website"
+                  >
+                    <span>Visit Live Site</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
               </div>
 
               {/* Rendered Business Website Canvas */}
