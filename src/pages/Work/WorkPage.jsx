@@ -94,6 +94,22 @@ export default function WorkPage() {
             we have developed two comprehensive concept studies. Both are fictional projects created to demonstrate
             our studio craftsmanship.
           </p>
+
+          <div className="work-quick-jump-bar" aria-label="Jump to project">
+            <span className="jump-bar-label">FEATURED STUDIES:</span>
+            <div className="jump-bar-links">
+              <a href="#klaro" className="jump-pill jump-gold">
+                <span className="jump-dot gold" />
+                <span className="jump-title">01. Klaro Home Services</span>
+                <span className="jump-arrow">↓</span>
+              </a>
+              <a href="#aurelix" className="jump-pill jump-chrome">
+                <span className="jump-dot chrome" />
+                <span className="jump-title">02. AURELIX Hair Atelier</span>
+                <span className="jump-arrow">↓</span>
+              </a>
+            </div>
+          </div>
         </div>
       </header>
 

@@ -154,14 +154,27 @@ export default function HomePage() {
                   <p className="card-body">
                     Boutique editorial salon presence featuring high-fashion composition & intuitive booking.
                   </p>
-                  <Link
-                    to="/work"
-                    className="card-visual-preview"
-                    aria-label="Explore AURELIX Hair Atelier concept study on Work page"
-                  >
-                    <span className="preview-label">Concept Project</span>
-                    <span className="preview-arrow">View on /work →</span>
-                  </Link>
+                  <div className="spotlight-card-actions">
+                    <a
+                      href="https://aureliex.netlify.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="spotlight-live-btn"
+                      aria-label="Open AURELIX Hair Atelier live demo website in a new tab"
+                    >
+                      <span className="live-dot" aria-hidden="true" />
+                      <span>View Live Demo</span>
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                    <Link
+                      to="/work#aurelix"
+                      className="card-visual-preview"
+                      aria-label="Explore AURELIX Hair Atelier concept study on Work page"
+                    >
+                      <span className="preview-label">Study Details</span>
+                      <span className="preview-arrow">/work →</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
 

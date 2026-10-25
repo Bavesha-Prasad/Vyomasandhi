@@ -197,6 +197,19 @@ export default function ServicesPage() {
                     <span className="ssl-lock" aria-hidden="true">🔒</span>
                     <span className="address-text">aurelix-campaign.concept/consultation</span>
                   </div>
+                  <div className="browser-chrome-actions">
+                    <span className="mockup-concept-badge">CONCEPT DEMO</span>
+                    <a
+                      href="https://aureliex.netlify.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mockup-live-btn"
+                      title="Open AURELIX live demo website"
+                    >
+                      <span>Visit Live Site</span>
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
                 </div>
 
                 <div className="browser-viewport viewport-narrow">
